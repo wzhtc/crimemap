@@ -13,7 +13,9 @@ def home():
     try:
         data = DB.get_all_inputs()
     except Exception as e:
+        print(e)
         data = None
+
     return render_template("home.html", data=data)
 
 
@@ -23,6 +25,7 @@ def add():
         data = request.form.get("userinput")
         DB.add_input(data)
     except Exception as e:
+        print(e)
     return home()
 
 
@@ -31,6 +34,7 @@ def clear():
     try:
         DB.clear_all()
     except Exception as e:
+        print(e)
     return home()
 
 if __name__ == '__main__':
