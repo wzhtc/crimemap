@@ -22,4 +22,4 @@ try:
         cursor.execute(sql)
         connection.commit()
 finally:
-connection.close()
+	connection.close()
